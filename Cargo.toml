@@ -1,0 +1,21 @@
+[package]
+name = "tbg"
+version = "0.1.11-alpha"
+edition = "2021"
+
+[dependencies]
+bevy = { version = "0.14.0", features = ["dynamic_linking", "file_watcher"] }
+
+bevy_light_2d = "0.2.0"
+
+bevy_ecs_ldtk = { git = "https://github.com/Sapein/bevy_ecs_ldtk/", branch = "0.14" }
+blake3 = { version = "1.5", features = [ "pure" ] }
+
+[patch.crates-io]
+bevy_ecs_tilemap = { git = "https://github.com/StarArawn/bevy_ecs_tilemap" }
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
